@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Yuwaka\\Adw\\' => array($baseDir . '/src'),
+    'Adw\\' => array($baseDir . '/src'),
 );
