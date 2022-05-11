@@ -16,7 +16,7 @@ class Date
         return (String) $this->value;
     }
 
-    public static function default(){
+    public function default($formatDate = null){
         if(!$formatDate){
             $formatDate = Config::getConfig('formatDate');
         }        
@@ -24,7 +24,7 @@ class Date
         return $date->isoFormat($formatDate);
     }
 
-    public static function humanDate(){
+    public function humanDate($language = null, $formatDate = null){
         if(!$formatHumanDate){
             $formatHumanDate = Config::getConfig('formatHumanDate');
         } 

@@ -16,7 +16,7 @@ class Time
         return (String) $this->value;
     }
 
-    public static function default(){
+    public function default($formatTime = null){
         if(!$formatTime){
             $formatTime = Config::getConfig('formatTime');
         }  
@@ -24,7 +24,7 @@ class Time
         return $date->isoFormat($formatTime);
     }
 
-    public static function dateTime(){
+    public function dateTime($formatDateTime = null){
         if(!$formatDateTime){
             $formatDateTime = Config::getConfig('formatDateTime');
         }  
@@ -32,7 +32,7 @@ class Time
         return $date->isoFormat($formatDateTime);
     }
 
-    public static function humanTime(){
+    public function humanTime($language = null, $formatHumanDateTime = null){
         if(!$formatHumanDateTime){
             $formatHumanDateTime = Config::getConfig('formatHumanDateTime');
         }  
@@ -44,7 +44,7 @@ class Time
         return $date->isoFormat($formatHumanDateTime);
     }
 
-    public static function timelapse(){
+    public function timelapse($language = null){
         if(!$language){
             $language = Config::getConfig('language');
         } 
