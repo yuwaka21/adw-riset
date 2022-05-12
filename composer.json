@@ -14,5 +14,7 @@
             "email": "yuwaka33@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "laravelcollective/html": "^6.3"
+    }
 }
