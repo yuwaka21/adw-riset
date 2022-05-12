@@ -6,6 +6,7 @@ use Adw\Formatter\Currency;
 use Adw\Formatter\Date;
 use Adw\Formatter\Time;
 use Adw\File\Upload;
+use Adw\Formatter\Terbilang;
 
 // number 
 $n1 =  new Number(100050.93);
@@ -28,9 +29,11 @@ $c1 =  new Currency(100050.93);
 echo '<b>exp: konversi float ke format nominal (default indo)</b>';
 echo '<br/>';
 echo $c1->format();
+echo '<br/>';
+$terbilang = new Terbilang();
 echo '<b>exp: konversi float ke format terbilang (default indo)</b>';
 echo '<br/>';
-// echo $c1->terbilang();
+echo $terbilang->terbilang(242345546450924);
 
 // Date
 // echo '<br/>';
@@ -67,7 +70,7 @@ echo '<br/>';
 // echo $t1->timelapse();
 
 // upload file
-echo '<br/>';
-echo '<b>exp: upload file</b>';
+// echo '<br/>';
+// echo '<b>exp: upload file</b>';
 // $upload = new Upload($request->file('file'));
 // echo $upload->upload();
