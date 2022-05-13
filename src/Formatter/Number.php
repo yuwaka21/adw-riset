@@ -22,9 +22,9 @@ class Number
      * @param string $data
      * @return string
      */
-    public function string($commaSeparator = null, $thousandSeparator = null, $decimalSeparator = null){        
-        if(!$commaSeparator){
-            $commaSeparator = Config::getConfig('commaSeparator');
+    public function string($decimalPrecision = null, $thousandSeparator = null, $decimalSeparator = null){        
+        if(!$decimalPrecision){
+            $decimalPrecision = Config::getConfig('decimalPrecision');
         }
         if(!$thousandSeparator){
             $thousandSeparator = Config::getConfig('thousandSeparator');
@@ -32,7 +32,7 @@ class Number
         if(!$decimalSeparator){
             $decimalSeparator = Config::getConfig('decimalSeparator');
         }        
-        return number_format($this->value, $commaSeparator, $decimalSeparator, $thousandSeparator);
+        return number_format($this->value, $decimalPrecision, $decimalSeparator, $thousandSeparator);
     }
 
     /**
