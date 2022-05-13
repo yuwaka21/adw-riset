@@ -22,7 +22,7 @@ class Currency
      * @param int $data
      * @return string
      */
-    public function format($decimalPrecision = null, $thousandSeparator = null, $decimalSeparator = null, $prefixCur = null){
+    public function format($decimalPrecision = null, $thousandSeparator = null, $decimalSeparator = null, $prefixCurr = null){
         if(!$decimalPrecision){
             $decimalPrecision = Config::getConfig('decimalPrecision');
         }
@@ -33,11 +33,11 @@ class Currency
             $decimalSeparator = Config::getConfig('decimalSeparator');
         }  
 
-        if(!$prefixCur){
-            $prefixCur = Config::getConfig('prefixCur');
+        if(!$prefixCurr){
+            $prefixCurr = Config::getConfig('prefixCurr');
         }  
 
-        return $prefixCur.number_format($this->value,$decimalPrecision,$decimalSeparator,$thousandSeparator);
+        return $prefixCurr.number_format($this->value,$decimalPrecision,$decimalSeparator,$thousandSeparator);
     }
     
 }
