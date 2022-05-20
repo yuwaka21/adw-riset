@@ -1,6 +1,7 @@
 <?php
 
 include ('../vendor/autoload.php');
+use Adw\Formatter\Config;
 use Adw\Formatter\Number;
 use Adw\Formatter\Currency;
 use Adw\Formatter\Date;
@@ -8,6 +9,11 @@ use Adw\Formatter\Time;
 use Adw\File\Upload;
 use Adw\Formatter\Terbilang;
 
+// mereplace config  yg telah didefinisikan default di formatter
+// Config::setConfig([
+//     'thousandSeparator' => ',',
+//     'prefixCurr' => 'USD '
+// ]);
 // number 
 $n1 =  new Number(100050.93);
 echo '<b>exp: default</b>';

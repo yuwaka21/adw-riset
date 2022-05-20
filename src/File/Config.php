@@ -10,11 +10,16 @@ class Config
         'maxSize'=>'2048'
     ];
 
-    public static function setConfig($config){
-        self::$config = $config;
+    public static function setConfig(array $config){
+        foreach($config as $index => $v){
+            self::$config[$index] = $config[$index];
+        }        
     }
 
-    public static function getConfig($name){
+    public static function getConfig($name=null){        
+        if($name==null){
+            return self::$config;
+        }        
         return self::$config[$name];
     }
 }
