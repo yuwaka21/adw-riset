@@ -2,13 +2,9 @@
 
 namespace Adw\Http;
 
-class Response {
+class Response extends \Illuminate\Http\Response {
     
-    const SUCCESS = 200;
-	const BAD_REQUEST = 400;
-	const UNATHORIZED = 401;
-    
-    private static function render($data, $message, $code = self::SUCCESS) {
+    private static function render($data, $message = 'Success retrieve data', $code = self::HTTP_OK) {
         if ($message) {
             $response['message'] = $message;
         }
@@ -20,11 +16,11 @@ class Response {
 		return response()->json($response, $code);
     }
     
-    public static function success($data, $message = null, $code = self::SUCCESS) {
+    public static function success($data, $message = null, $code = self::HTTP_OK) {
         return self::render($data, $message, $code);
     }
     
-    public static function error($message = 'Something went wrong', $code = self::BAD_REQUEST) {        
+    public static function error($message = 'Something went wrong', $code = self::HTTP_BAD_REQUEST) {        
         if (is_array($message)) {
             $errorMessage = null;
             if (isset($message['message'])) {
